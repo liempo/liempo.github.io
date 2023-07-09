@@ -1,4 +1,5 @@
 <script lang="ts">
+	export const prerender = true;
 	import '../app.css';
 	import { tweened } from 'svelte/motion';
 	let pointer = tweened(
@@ -17,6 +18,7 @@
 
 <svelte:head>
 	<link href="https://fonts.cdnfonts.com/css/made-mirage" rel="stylesheet" />
+	<title>Liempo</title>
 </svelte:head>
 
 <layout>
