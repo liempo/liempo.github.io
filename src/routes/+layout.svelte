@@ -1,19 +1,19 @@
 <script lang="ts">
-	export const prerender = true;
-	import '../app.css';
-	import { tweened } from 'svelte/motion';
+	export const prerender = true
+	import '../app.css'
+	import { tweened } from 'svelte/motion'
 	let pointer = tweened(
 		{ x: 0, y: 0 },
 		{
 			duration: 1000
 		}
-	);
+	)
 
 	const mousemove = (e: MouseEvent) => {
-		const x = (e.clientX / window.innerWidth) * 100;
-		const y = (e.clientY / window.innerHeight) * 100;
-		pointer.set({ x, y });
-	};
+		const x = (e.clientX / window.innerWidth) * 100
+		const y = (e.clientY / window.innerHeight) * 100
+		pointer.set({ x, y })
+	}
 </script>
 
 <svelte:head>
