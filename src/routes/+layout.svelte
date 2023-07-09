@@ -2,7 +2,7 @@
 	import '../app.css'
 	import { tweened } from 'svelte/motion'
 	let pointer = tweened(
-		{ x: 0, y: 0 },
+		{ x: 50, y: 50 },
 		{
 			duration: 1000
 		}
@@ -12,6 +12,10 @@
 		const x = (e.clientX / window.innerWidth) * 100
 		const y = (e.clientY / window.innerHeight) * 100
 		pointer.set({ x, y })
+	}
+
+	const mouseleave = () => {
+		pointer.set({ x: 50, y: 50 })
 	}
 </script>
 
@@ -34,8 +38,9 @@
             "
 			style="
 				width: 20%;
-				height: 20%;
-                top: {$pointer.y - 10}%;
+				height: 0;
+				padding-bottom: 20%;
+                top: {$pointer.y - 20}%;
                 left: {$pointer.x - 10}%;
             "
 		/>
@@ -44,7 +49,7 @@
 	</div>
 
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="w-full h-full absolute inset-0" on:mousemove={mousemove}>
+	<div class="w-full h-full absolute inset-0" on:mousemove={mousemove} on:mouseleave={mouseleave}>
 		<slot />
 	</div>
 </layout>
