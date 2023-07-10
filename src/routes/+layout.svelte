@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css'
 	import { tweened } from 'svelte/motion'
+
 	let pointer = tweened(
 		{ x: 50, y: 50 },
 		{
@@ -35,6 +36,8 @@
                 to-purple-500
                 animate-gradient-spin
                 opacity-50
+				min-w-[256px]
+				min-h-[256px]
             "
 			style="
 				width: 20%;
