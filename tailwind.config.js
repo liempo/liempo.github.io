@@ -6,18 +6,35 @@ export default {
 			fontFamily: {
 				mirage: ['MADE Mirage', 'sans-serif']
 			},
-			colors: {
-				background: '#252929'
-			},
 			keyframes: {
-				'gradient-spin': {
-					'0%': { rotate: '0deg' },
-					'50%': { scale: '1 1.3' },
-					'100%': { rotate: '360deg' }
+				blob: {
+					'0%': {
+						'border-radius': '50% 50% 50% 50%',
+						transform: 'rotate(0deg)',
+						scale: '1'
+					},
+					'25%': {
+						'border-radius': '60% 40% 50% 50%',
+						transform: 'rotate(45deg)'
+					},
+					'50%': {
+						'border-radius': '50% 50% 40% 60%',
+						transform: 'rotate(90deg)',
+						scale: '1.2'
+					},
+					'75%': {
+						'border-radius': '50% 50% 60% 40%',
+						transform: 'rotate(135deg)'
+					},
+					'100%': {
+						'border-radius': '50% 50% 50% 50%',
+						transform: 'rotate(360deg)',
+						scale: '1'
+					}
 				}
 			},
 			animation: {
-				'gradient-spin': 'gradient-spin 6s ease-in-out infinite'
+				blob: 'blob 8s ease-in-out infinite'
 			}
 		},
 		plugins: []
