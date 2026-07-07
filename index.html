@@ -4,163 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alec John O. Gonzales</title>
-  <meta name="description" content="Alec John O. Gonzales — iOS Engineer">
+  <meta name="description" content="Alec John O. Gonzales — Mobile / iOS / Android / Full-Stack Product Engineer · SwiftUI · Jetpack Compose · Kotlin Multiplatform">
   <link href="https://fonts.cdnfonts.com/css/made-mirage" rel="stylesheet">
   <style>
     :root {
       color-scheme: dark;
       --bg: #020305;
       --text: rgba(255,255,255,.94);
-      --muted: rgba(255,255,255,.68);
-      --line: rgba(255,255,255,.12);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.13);
       --card: rgba(255,255,255,.055);
       --card-strong: rgba(255,255,255,.09);
-      --accent: #f2c14e;
-      --purple: #b782ff;
+      --accent: rgba(255,255,255,.96);
+      --blob: rgba(183,130,255,.34);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -20vmax;
-      z-index: -3;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(242, 193, 78, .30), transparent 28%),
-        radial-gradient(circle at 76% 12%, rgba(183, 130, 255, .42), transparent 30%),
-        radial-gradient(circle at 55% 80%, rgba(20, 120, 255, .22), transparent 32%),
-        #020305;
-      filter: blur(22px);
-    }
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
-        url('./noise.svg');
-      background-size: 72px 72px, 72px 72px, auto;
-      opacity: .55;
-      mask-image: radial-gradient(circle at center, black, transparent 82%);
-      pointer-events: none;
-    }
-    main {
-      width: min(1120px, calc(100% - 36px));
-      margin: 0 auto;
-      padding: 72px 0 96px;
-    }
-    header {
-      min-height: 76vh;
-      display: grid;
-      align-content: center;
-      gap: 28px;
-      border-bottom: 1px solid var(--line);
-      position: relative;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 18%;
-      width: 1px;
-      height: 160px;
-      background: linear-gradient(var(--accent), transparent);
-    }
-    h1, h2, h3 {
-      font-family: "MADE Mirage", Georgia, serif;
-      font-weight: 700;
-      letter-spacing: -.055em;
-    }
-    h1 {
-      margin: 0;
-      max-width: 980px;
-      font-size: clamp(4.6rem, 13vw, 11rem);
-      line-height: .86;
-      text-wrap: balance;
-    }
-    h2 {
-      margin: 0 0 26px;
-      font-size: clamp(3rem, 8vw, 6.7rem);
-      line-height: .9;
-    }
-    h3 {
-      margin: 34px 0 14px;
-      font-size: clamp(1.65rem, 3vw, 2.65rem);
-      line-height: 1;
-      color: var(--accent);
-    }
-    p { margin: 0 0 18px; }
-    a { color: var(--accent); text-decoration-color: rgba(167,255,240,.42); text-underline-offset: 5px; }
-    strong { color: white; }
-    .subtitle {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 4.4rem);
-      line-height: .95;
-      font-family: "MADE Mirage", Georgia, serif;
-      letter-spacing: -.04em;
-    }
-    .contact { color: var(--muted); max-width: 760px; font-weight: 700; }
-    section {
-      margin-top: 28px;
-      padding: clamp(24px, 4vw, 42px);
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: linear-gradient(135deg, var(--card-strong), rgba(255,255,255,.025));
-      box-shadow: 0 28px 90px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.08);
-      backdrop-filter: blur(22px);
-    }
-    section p, section li { color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.18rem); }
-    ul { margin: 0; padding-left: 1.15rem; }
-    li { margin: 0 0 12px; }
-    #skills p {
-      display: grid;
-      gap: 12px;
-    }
-    #selected-projects {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 4px;
-    }
-    #selected-projects p {
-      padding: 18px 0 28px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .cursor-blob {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 420px;
-      height: 420px;
-      border-radius: 999px;
-      pointer-events: none;
-      z-index: -1;
-      opacity: .44;
-      background: radial-gradient(circle, rgba(242,193,78,.72) 0%, rgba(183,130,255,.30) 42%, transparent 70%);
-      filter: blur(42px);
-      transform: translate3d(calc(var(--blob-x, 50vw) - 50%), calc(var(--blob-y, 40vh) - 50%), 0);
-      transition: transform 160ms ease-out;
-      will-change: transform;
-    }
-    @media (pointer: coarse) {
-      .cursor-blob { display: none; }
-    }
-
-    @media (max-width: 680px) {
-      main { width: min(100% - 24px, 1120px); padding-top: 44px; }
-      header { min-height: 62vh; }
-      section { border-radius: 24px; }
-    }
+    body { margin:0; min-height:100vh; background:var(--bg); color:var(--text); font:16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; overflow-x:hidden; }
+    body::before { content:""; position:fixed; inset:-20vmax; z-index:-3; background: radial-gradient(circle at 18% 18%, rgba(255,255,255,.18), transparent 28%), radial-gradient(circle at 76% 12%, rgba(183,130,255,.34), transparent 30%), radial-gradient(circle at 55% 80%, rgba(20,120,255,.20), transparent 32%), #020305; filter:blur(22px); }
+    body::after { content:""; position:fixed; inset:0; z-index:-2; background: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px), url('./noise.svg'); background-size:72px 72px,72px 72px,auto; opacity:.55; mask-image:radial-gradient(circle at center, black, transparent 82%); pointer-events:none; }
+    main { width:min(1120px, calc(100% - 36px)); margin:0 auto; padding:72px 0 96px; }
+    header { min-height:76vh; display:grid; align-content:center; gap:28px; border-bottom:1px solid var(--line); position:relative; }
+    header::before { content:""; position:absolute; left:0; top:18%; width:1px; height:160px; background:linear-gradient(rgba(255,255,255,.92), transparent); }
+    h1,h2,h3 { font-family:"MADE Mirage", Georgia, serif; font-weight:700; letter-spacing:-.055em; color:var(--text); }
+    h1 { margin:0; max-width:980px; font-size:clamp(4.6rem,13vw,11rem); line-height:.86; text-wrap:balance; }
+    h2 { margin:0 0 26px; font-size:clamp(3rem,8vw,6.7rem); line-height:.9; }
+    h3 { margin:34px 0 14px; font-size:clamp(1.65rem,3vw,2.65rem); line-height:1; }
+    p { margin:0 0 18px; }
+    a { color:var(--text); text-decoration-color:rgba(255,255,255,.42); text-underline-offset:5px; }
+    strong { color:white; }
+    .subtitle { margin:0; max-width:1020px; font-size:clamp(1.9rem,4.9vw,4.2rem); line-height:1; font-family:"MADE Mirage", Georgia, serif; letter-spacing:-.04em; }
+    .contact { color:var(--muted); max-width:760px; font-weight:700; }
+    section { margin-top:28px; padding:clamp(24px,4vw,42px); border:1px solid var(--line); border-radius:32px; background:linear-gradient(135deg,var(--card-strong),rgba(255,255,255,.025)); box-shadow:0 28px 90px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.08); backdrop-filter:blur(22px); }
+    section p, section li { color:var(--muted); font-size:clamp(1rem,1.8vw,1.18rem); }
+    ul { margin:0; padding-left:1.15rem; }
+    li { margin:0 0 12px; }
+    .skill-group { margin: 0 0 22px; }
+    .skill-group h3 { margin:0 0 12px; font-family:Inter, ui-sans-serif, system-ui, sans-serif; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+    .badges { display:flex; flex-wrap:wrap; gap:10px; }
+    .badge { display:inline-flex; align-items:center; min-height:34px; border:1px solid rgba(255,255,255,.20); border-radius:999px; padding:7px 12px; background:rgba(255,255,255,.07); color:var(--text); font-size:.95rem; font-weight:650; box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
+    #selected-projects p { padding:18px 0 28px; border-bottom:1px solid var(--line); }
+    .cursor-blob { position:fixed; left:0; top:0; width:420px; height:420px; border-radius:999px; pointer-events:none; z-index:-1; opacity:.42; background:radial-gradient(circle, rgba(255,255,255,.34) 0%, var(--blob) 42%, transparent 70%); filter:blur(42px); transform:translate3d(calc(var(--blob-x, 50vw) - 50%), calc(var(--blob-y, 40vh) - 50%), 0); transition:transform 160ms ease-out; will-change:transform; }
+    @media (pointer:coarse) { .cursor-blob { display:none; } }
+    @media (max-width:680px) { main { width:min(100% - 24px,1120px); padding-top:44px; } header { min-height:62vh; } section { border-radius:24px; } }
   </style>
 </head>
 <body>
@@ -168,7 +54,7 @@
 <main>
   <header>
     <h1>Alec John O. Gonzales</h1>
-    <p class="subtitle">iOS Engineer</p>
+    <p class="subtitle">Mobile / iOS / Android / Full-Stack Product Engineer · SwiftUI · Jetpack Compose · Kotlin Multiplatform</p>
     <p class="contact">Philippines · Open to Remote<br>+63 956 068 7614 · gonzalesalec@gmail.com<br>LinkedIn: <a href="https://www.linkedin.com/in/liempo/" target="_blank" rel="noreferrer">linkedin.com/in/liempo</a> · GitHub: <a href="https://github.com/liempo" target="_blank" rel="noreferrer">github.com/liempo</a></p>
   </header>
   <section id="summary">
@@ -177,7 +63,52 @@
   </section>
   <section id="skills">
     <h2>Skills</h2>
-    <p><strong>iOS:</strong> Swift, Objective-C, UIKit, SwiftUI, TestFlight, App Store Connect<br><strong>Android:</strong> Kotlin, Java, View-based Android UI (XML layouts), Jetpack Compose, AndroidX, Material Design<br><strong>Cross-platform:</strong> Flutter, Kotlin Multiplatform, Compose Multiplatform<br><strong>Web:</strong> React, Svelte, Next.js, SvelteKit, TypeScript, JavaScript, Tailwind CSS<br><strong>Backend / APIs:</strong> PostgreSQL, Edge Functions, GraphQL, REST APIs, API implementation, auth/access-control rules, Sanity CMS<br><strong>DevOps / Systems:</strong> Docker Compose, Tailscale, Linux systems engineering, CI/CD, app distribution</p>
+    <div class="skill-group"><h3>iOS</h3><div class="badges">
+<span class="badge">Swift</span>
+<span class="badge">Objective-C</span>
+<span class="badge">UIKit</span>
+<span class="badge">SwiftUI</span>
+<span class="badge">TestFlight</span>
+<span class="badge">App Store Connect</span>
+</div></div>
+<div class="skill-group"><h3>Android</h3><div class="badges">
+<span class="badge">Kotlin</span>
+<span class="badge">Java</span>
+<span class="badge">View-based Android UI (XML layouts)</span>
+<span class="badge">Jetpack Compose</span>
+<span class="badge">AndroidX</span>
+<span class="badge">Material Design</span>
+</div></div>
+<div class="skill-group"><h3>Cross-platform</h3><div class="badges">
+<span class="badge">Flutter</span>
+<span class="badge">Kotlin Multiplatform</span>
+<span class="badge">Compose Multiplatform</span>
+</div></div>
+<div class="skill-group"><h3>Web</h3><div class="badges">
+<span class="badge">React</span>
+<span class="badge">Svelte</span>
+<span class="badge">Next.js</span>
+<span class="badge">SvelteKit</span>
+<span class="badge">TypeScript</span>
+<span class="badge">JavaScript</span>
+<span class="badge">Tailwind CSS</span>
+</div></div>
+<div class="skill-group"><h3>Backend / APIs</h3><div class="badges">
+<span class="badge">PostgreSQL</span>
+<span class="badge">Edge Functions</span>
+<span class="badge">GraphQL</span>
+<span class="badge">REST APIs</span>
+<span class="badge">API implementation</span>
+<span class="badge">auth/access-control rules</span>
+<span class="badge">Sanity CMS</span>
+</div></div>
+<div class="skill-group"><h3>DevOps / Systems</h3><div class="badges">
+<span class="badge">Docker Compose</span>
+<span class="badge">Tailscale</span>
+<span class="badge">Linux systems engineering</span>
+<span class="badge">CI/CD</span>
+<span class="badge">app distribution</span>
+</div></div>
   </section>
   <section id="selected-projects">
     <h2>Projects</h2>
@@ -187,7 +118,6 @@
 <p>Production iOS application work involving GraphQL API integration and release-oriented mobile feature delivery.</p>
   </section>
 </main>
-
 <script>
   const root = document.documentElement;
   window.addEventListener('pointermove', (event) => {
