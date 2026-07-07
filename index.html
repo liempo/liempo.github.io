@@ -15,7 +15,7 @@
       --line: rgba(255,255,255,.12);
       --card: rgba(255,255,255,.055);
       --card-strong: rgba(255,255,255,.09);
-      --teal: #a7fff0;
+      --accent: #f2c14e;
       --purple: #b782ff;
     }
     * { box-sizing: border-box; }
@@ -34,7 +34,7 @@
       inset: -20vmax;
       z-index: -3;
       background:
-        radial-gradient(circle at 18% 18%, rgba(45, 255, 224, .38), transparent 28%),
+        radial-gradient(circle at 18% 18%, rgba(242, 193, 78, .30), transparent 28%),
         radial-gradient(circle at 76% 12%, rgba(183, 130, 255, .42), transparent 30%),
         radial-gradient(circle at 55% 80%, rgba(20, 120, 255, .22), transparent 32%),
         #020305;
@@ -74,7 +74,7 @@
       top: 18%;
       width: 1px;
       height: 160px;
-      background: linear-gradient(var(--teal), transparent);
+      background: linear-gradient(var(--accent), transparent);
     }
     h1, h2, h3 {
       font-family: "MADE Mirage", Georgia, serif;
@@ -97,10 +97,10 @@
       margin: 34px 0 14px;
       font-size: clamp(1.65rem, 3vw, 2.65rem);
       line-height: 1;
-      color: var(--teal);
+      color: var(--accent);
     }
     p { margin: 0 0 18px; }
-    a { color: var(--teal); text-decoration-color: rgba(167,255,240,.42); text-underline-offset: 5px; }
+    a { color: var(--accent); text-decoration-color: rgba(167,255,240,.42); text-underline-offset: 5px; }
     strong { color: white; }
     .subtitle {
       margin: 0;
@@ -135,6 +135,27 @@
       padding: 18px 0 28px;
       border-bottom: 1px solid var(--line);
     }
+
+    .cursor-blob {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 420px;
+      height: 420px;
+      border-radius: 999px;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .44;
+      background: radial-gradient(circle, rgba(242,193,78,.72) 0%, rgba(183,130,255,.30) 42%, transparent 70%);
+      filter: blur(42px);
+      transform: translate3d(calc(var(--blob-x, 50vw) - 50%), calc(var(--blob-y, 40vh) - 50%), 0);
+      transition: transform 160ms ease-out;
+      will-change: transform;
+    }
+    @media (pointer: coarse) {
+      .cursor-blob { display: none; }
+    }
+
     @media (max-width: 680px) {
       main { width: min(100% - 24px, 1120px); padding-top: 44px; }
       header { min-height: 62vh; }
@@ -143,6 +164,7 @@
   </style>
 </head>
 <body>
+<div class="cursor-blob" aria-hidden="true"></div>
 <main>
   <header>
     <h1>Alec John O. Gonzales</h1>
@@ -158,12 +180,20 @@
     <p><strong>iOS:</strong> Swift, Objective-C, UIKit, SwiftUI, TestFlight, App Store Connect<br><strong>Android:</strong> Kotlin, Java, View-based Android UI (XML layouts), Jetpack Compose, AndroidX, Material Design<br><strong>Cross-platform:</strong> Flutter, Kotlin Multiplatform, Compose Multiplatform<br><strong>Web:</strong> React, Svelte, Next.js, SvelteKit, TypeScript, JavaScript, Tailwind CSS<br><strong>Backend / APIs:</strong> PostgreSQL, Edge Functions, GraphQL, REST APIs, API implementation, auth/access-control rules, Sanity CMS<br><strong>DevOps / Systems:</strong> Docker Compose, Tailscale, Linux systems engineering, CI/CD, app distribution</p>
   </section>
   <section id="selected-projects">
-    <h2>Selected Projects</h2>
+    <h2>Projects</h2>
     <h3>Career Match by JKEC — SwiftUI / Jetpack Compose / App Store / Google Play</h3>
 <p>Production iOS and Android application developed at Astra Applications.<br>App Store: <a href="https://apps.apple.com/ph/app/career-match-by-jkec/id6479643541" target="_blank" rel="noreferrer">Career Match by JKEC</a> · Google Play: <a href="https://play.google.com/store/apps/details?id=com.astraapplications.jkec.careermatch" target="_blank" rel="noreferrer">Career Match by JKEC</a></p>
 <h3>Worldwide Auctioneers iOS App — iOS / GraphQL</h3>
 <p>Production iOS application work involving GraphQL API integration and release-oriented mobile feature delivery.</p>
   </section>
 </main>
+
+<script>
+  const root = document.documentElement;
+  window.addEventListener('pointermove', (event) => {
+    root.style.setProperty('--blob-x', `${event.clientX}px`);
+    root.style.setProperty('--blob-y', `${event.clientY}px`);
+  }, { passive: true });
+</script>
 </body>
 </html>
