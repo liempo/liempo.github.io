@@ -28,9 +28,9 @@
 
 	const mouseleave = () => {
 		if (behavior !== 'follow') return
-		let size = 128
-		let x = window.innerWidth / 2 - size / 2
-		let y = window.innerHeight / 2 - size / 2
+		const size = 128
+		const x = window.innerWidth / 2 - size / 2
+		const y = window.innerHeight / 2 - size / 2
 		blob.set({ x, y, w: size, h: size, cornerRadius: size / 2 }, { duration: 500 })
 	}
 
@@ -42,7 +42,7 @@
 </script>
 
 <layout>
-	<div class="w-screen h-screen bg-black relative overflow-hidden">
+	<div class="fixed inset-0 overflow-hidden bg-black">
 		<div
 			class="
                 absolute
@@ -65,19 +65,15 @@
 		/>
 
 		<div
-			class="w-full h-full absolute transition duration-1000 ease-in-out {behavior === 'follow'
+			class="absolute inset-0 transition duration-1000 ease-in-out {behavior === 'follow'
 				? 'backdrop-blur-3xl'
 				: 'backdrop-blur-sm'}"
 		/>
-		<div class="w-full h-full bg-[url('/noise.svg')] absolute opacity-[15%]" />
+		<div class="absolute inset-0 bg-[url('/noise.svg')] opacity-[15%]" />
 	</div>
 
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div
-		class="w-screen h-screen absolute inset-0"
-		on:mousemove={mousemove}
-		on:mouseleave={mouseleave}
-	>
+	<div class="relative min-h-screen" on:mousemove={mousemove} on:mouseleave={mouseleave}>
 		<slot />
 	</div>
 </layout>
