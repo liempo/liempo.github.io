@@ -1,6 +1,7 @@
-### Alec John O. Gonzales — Portfolio
+### Hi there, I'm a young software developer who likes to explore things.
 
-Static GitHub Pages portfolio for Mobile / iOS / Full-Stack Product Engineer positioning.
-
-- Site: https://liempo.github.io
-- Source artifact: `/box/wiki/personal/career/Portfolio.html`
+- ⚡ I am a full time iOS dev
+- 🤖 Previously an Android dev
+- 🔭 Always working on something cool on the side! 😉
+- 🌱 I’m currently exploring web development
+- 💬 Ask me about anything related to native mobile app development
