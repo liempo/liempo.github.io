@@ -9,14 +9,11 @@
 <card
 	bind:this={card}
 	class=" 
-		group w-40 h-56 rounded-lg shadow-md
-		outline outline-white outline-1
+		group h-64 w-full rounded-lg shadow-md
+		outline outline-white/70 outline-1
 		overflow-hidden
     "
 	on:mouseenter={() => {
-		// Get the card's corner radius in number form
-		console.log(card)
-
 		dispatch('cardenter', {
 			x: card.offsetLeft,
 			y: card.offsetTop,
@@ -29,7 +26,7 @@
 		dispatch('cardleave')
 	}}
 >
-	<div class="h-full opacity-0 group-hover:opacity-100 transition duration-700 ease-in-out">
+	<div class="h-full opacity-80 group-hover:opacity-100 transition duration-700 ease-in-out">
 		<slot />
 	</div>
 </card>
