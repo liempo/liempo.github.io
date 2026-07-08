@@ -27,7 +27,8 @@
     .badges { display:flex; flex-wrap:wrap; gap:10px; }
     .badge { display:inline-flex; align-items:center; min-height:34px; border:1px solid rgba(255,255,255,.20); border-radius:999px; padding:7px 12px; background:rgba(255,255,255,.07); color:var(--text); font-size:.95rem; font-weight:650; box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
     #experience h3 { color: var(--text); }
-    #selected-projects p { padding:18px 0 28px; border-bottom:1px solid var(--line); }
+    #selected-projects p { padding:18px 0 8px; }
+    #selected-projects ul { margin-bottom:30px; padding-bottom:24px; border-bottom:1px solid var(--line); }
     .cursor-blob { position:fixed; left:0; top:0; width:420px; height:420px; border-radius:999px; pointer-events:none; z-index:-1; opacity:.42; background:radial-gradient(circle, rgba(255,255,255,.34) 0%, var(--blob) 42%, transparent 70%); filter:blur(42px); transform:translate3d(calc(var(--blob-x, 50vw) - 50%), calc(var(--blob-y, 40vh) - 50%), 0); transition:transform 160ms ease-out; will-change:transform; }
     @media (pointer:coarse) { .cursor-blob { display:none; } }
     @media (max-width:680px) { main { width:min(100% - 24px,1120px); padding-top:44px; } header { min-height:62vh; } section { border-radius:24px; } }
@@ -113,9 +114,27 @@
 <li>Built Android applications, Kotlin/LibGDX features, TensorFlow research prototypes, and Odoo ERP customizations across early engineering roles.</li>
 </ul></section>
 <section id="selected-projects"><h2>Projects</h2><h3>Career Match by JKEC — SwiftUI / Jetpack Compose / App Store / Google Play</h3>
-<p>Career Match by JKEC is a career exploration and coaching platform from J. Kruse Education Center for students and stakeholders, helping users discover strengths, personality type, and career paths; match against 800+ careers; explore 16 career pathways, education programs, universities, certifications, and opportunities; connect with career coaches; and let organizations promote programs, apprenticeships, and career opportunities to aligned talent. At Astra Applications, I developed the production iOS and Android app across SwiftUI and Jetpack Compose, translated Figma designs into production interfaces, supported TestFlight, App Store, and Google Play release workflows, and integrated the mobile app with Career Match platform services including Supabase/Postgres-backed data workflows, auth/access-control rules, Edge Functions, Sanity CMS content, and API implementation used by student, coach, and staff workflows.<br>App Store: <a href="https://apps.apple.com/ph/app/career-match-by-jkec/id6479643541" target="_blank" rel="noreferrer">Career Match by JKEC</a> · Google Play: <a href="https://play.google.com/store/apps/details?id=com.astraapplications.jkec.careermatch" target="_blank" rel="noreferrer">Career Match by JKEC</a></p>
+<p>Career Match by JKEC is a career exploration and coaching platform for students, career coaches, schools, and organizations.</p>
+<ul>
+<li>Built production iOS and Android app features using SwiftUI and Jetpack Compose.</li>
+<li>Translated Figma designs into production mobile interfaces and supported TestFlight, App Store, and Google Play releases.</li>
+<li>Integrated mobile workflows with Supabase/Postgres-backed data, auth/access-control rules, Edge Functions, Sanity CMS content, and app/admin APIs.</li>
+<li>Supported student, coach, and staff workflows for career discovery, assessments, coaching, applications, reports, payments, content, and opportunities.</li>
+<li>App Store: <a href="https://apps.apple.com/ph/app/career-match-by-jkec/id6479643541" target="_blank" rel="noreferrer">Career Match by JKEC</a> · Google Play: <a href="https://play.google.com/store/apps/details?id=com.astraapplications.jkec.careermatch" target="_blank" rel="noreferrer">Career Match by JKEC</a></li>
+</ul>
 <h3>Worldwide Auctioneers iOS App — iOS / GraphQL</h3>
-<p>Worldwide Auctioneers iOS App is production iOS application work involving GraphQL API integration and release-oriented mobile feature delivery. I built and maintained iOS features that connected app workflows to backend API data, coordinated implementation across design, backend, content, release, and stakeholder requirements, and supported production delivery through native iOS development practices.</p>
+<p>Worldwide Auctioneers iOS App is production iOS application work connected to backend auction data through GraphQL APIs.</p>
+<ul>
+<li>Built and maintained native iOS features connected to GraphQL API data.</li>
+<li>Coordinated implementation across design, backend, content, release, and stakeholder requirements.</li>
+<li>Supported release-oriented mobile delivery through production iOS development practices.</li>
+</ul>
 <h3>Career Quest by JKEC — TypeScript / Fastify / MQTT / React / SQLite / Docker</h3>
-<p>Career Quest by JKEC is the technical product system for the Career Quest Discovery Maze, where RFID/tag reads are collected through MQTT, converted into participant journey episodes across logical locations, shown in operations dashboards, and used by a checkout kiosk to generate and print student reports at the end of the visit. I worked across the Astra/JKEC product stack spanning TypeScript/Fastify middleware, MQTT tag ingestion, SQLite persistence, React/Vite dashboard and checkout apps, QR scanning, PDF report generation, Docker Compose, Caddy, and GitHub Actions deployment workflows, supporting reader/tag workflows, dashboard operations, checkout UX, deployment, and integration with Career Match data workflows.</p></section>
+<p>Career Quest by JKEC is the technical product system for the Career Quest Discovery Maze, supporting RFID/tag-based participant journey tracking, operations dashboards, checkout flows, and printable student reports.</p>
+<ul>
+<li>Built TypeScript/Fastify middleware for MQTT tag ingestion, SQLite persistence, journey analysis, dashboard APIs, and report generation.</li>
+<li>Worked on React/Vite dashboard and checkout interfaces for operations, QR/tag scanning, student checkout, report preview, and PDF printing.</li>
+<li>Supported Docker Compose, Caddy, MQTT broker, and GitHub Actions deployment workflows.</li>
+<li>Integrated Career Quest workflows with Career Match data and staff-facing operational processes.</li>
+</ul></section>
 </main><script>const root=document.documentElement;window.addEventListener('pointermove',(event)=>{root.style.setProperty('--blob-x',`${event.clientX}px`);root.style.setProperty('--blob-y',`${event.clientY}px`);},{passive:true});</script></body></html>
