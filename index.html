@@ -7,17 +7,7 @@
   <meta name="description" content="Alec John O. Gonzales — Mobile / iOS / Android / Full-Stack Product Engineer · SwiftUI · Jetpack Compose · Kotlin Multiplatform">
   <link href="https://fonts.cdnfonts.com/css/made-mirage" rel="stylesheet">
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #020305;
-      --text: rgba(255,255,255,.94);
-      --muted: rgba(255,255,255,.70);
-      --line: rgba(255,255,255,.13);
-      --card: rgba(255,255,255,.055);
-      --card-strong: rgba(255,255,255,.09);
-      --accent: rgba(255,255,255,.96);
-      --blob: rgba(183,130,255,.34);
-    }
+    :root { color-scheme: dark; --bg: #020305; --text: rgba(255,255,255,.94); --muted: rgba(255,255,255,.70); --line: rgba(255,255,255,.13); --card: rgba(255,255,255,.055); --card-strong: rgba(255,255,255,.09); --accent: rgba(255,255,255,.96); --blob: rgba(183,130,255,.34); }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { margin:0; min-height:100vh; background:var(--bg); color:var(--text); font:16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; overflow-x:hidden; }
@@ -43,11 +33,12 @@
     .skill-group h3 { margin:0 0 12px; font-family:Inter, ui-sans-serif, system-ui, sans-serif; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
     .badges { display:flex; flex-wrap:wrap; gap:10px; }
     .badge { display:inline-flex; align-items:center; min-height:34px; border:1px solid rgba(255,255,255,.20); border-radius:999px; padding:7px 12px; background:rgba(255,255,255,.07); color:var(--text); font-size:.95rem; font-weight:650; box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
+    #experience h3 { color: var(--text); }
     #selected-projects p { padding:18px 0 28px; border-bottom:1px solid var(--line); }
     .cursor-blob { position:fixed; left:0; top:0; width:420px; height:420px; border-radius:999px; pointer-events:none; z-index:-1; opacity:.42; background:radial-gradient(circle, rgba(255,255,255,.34) 0%, var(--blob) 42%, transparent 70%); filter:blur(42px); transform:translate3d(calc(var(--blob-x, 50vw) - 50%), calc(var(--blob-y, 40vh) - 50%), 0); transition:transform 160ms ease-out; will-change:transform; }
     @media (pointer:coarse) { .cursor-blob { display:none; } }
     @media (max-width:680px) { main { width:min(100% - 24px,1120px); padding-top:44px; } header { min-height:62vh; } section { border-radius:24px; } }
-  </style>
+</style>
 </head>
 <body>
 <div class="cursor-blob" aria-hidden="true"></div>
@@ -57,13 +48,8 @@
     <p class="subtitle">Mobile / iOS / Android / Full-Stack Product Engineer · SwiftUI · Jetpack Compose · Kotlin Multiplatform</p>
     <p class="contact">Philippines · Open to Remote<br>+63 956 068 7614 · gonzalesalec@gmail.com<br>LinkedIn: <a href="https://www.linkedin.com/in/liempo/" target="_blank" rel="noreferrer">linkedin.com/in/liempo</a> · GitHub: <a href="https://github.com/liempo" target="_blank" rel="noreferrer">github.com/liempo</a></p>
   </header>
-  <section id="summary">
-    <h2>Summary</h2>
-    <p>iOS Engineer with 8+ years of experience building production mobile apps and the backend services that support them. Recent work at Astra Applications spans SwiftUI iOS development, Jetpack Compose Android delivery, App Store and Google Play release workflows, GraphQL/API integrations, PostgreSQL-backed features, Edge Functions, access-control rules, GitHub Actions CI/CD, and Figma-to-production implementation. Background includes native iOS work across Astra, Bigcat, and SeriousMD, with supporting Android, Flutter, and product tooling experience.</p>
-  </section>
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skill-group"><h3>iOS</h3><div class="badges">
+  <section id="summary"><h2>Summary</h2><p>iOS Engineer with 8+ years of experience building production mobile apps and the backend services that support them. Recent work at Astra Applications spans SwiftUI iOS development, Jetpack Compose Android delivery, App Store and Google Play release workflows, GraphQL/API integrations, PostgreSQL-backed features, Edge Functions, access-control rules, GitHub Actions CI/CD, and Figma-to-production implementation. Background includes native iOS work across Astra, Bigcat, and SeriousMD, with supporting Android, Flutter, and product tooling experience.</p></section>
+  <section id="skills"><h2>Skills</h2><div class="skill-group"><h3>iOS</h3><div class="badges">
 <span class="badge">Swift</span>
 <span class="badge">Objective-C</span>
 <span class="badge">UIKit</span>
@@ -108,15 +94,42 @@
 <span class="badge">Linux systems engineering</span>
 <span class="badge">CI/CD</span>
 <span class="badge">app distribution</span>
-</div></div>
-  </section>
-  <section id="selected-projects">
-    <h2>Projects</h2>
-    <h3>Career Match by JKEC — SwiftUI / Jetpack Compose / App Store / Google Play</h3>
+</div></div></section>
+  <section id="experience"><h2>Experience</h2><h3>Astra Applications, LLC — iOS Developer / Software Engineer</h3>
+<p><strong>November 2023 – Present</strong></p>
+<ul>
+<li>Lead mobile development for production applications including Career Match and Worldwide Auctioneers, translating Figma designs into SwiftUI and Jetpack Compose interfaces and shipping updates through TestFlight, the App Store, and Google Play.</li>
+<li>Built Career Match platform tooling across the mobile app, Next.js admin backoffice, Sanity CMS, and Supabase/Postgres backend, supporting coaches and staff workflows for clients, applications, payments, reports, and content operations.</li>
+<li>Implemented PostgreSQL/Supabase backend work including schema migrations, RLS/auth access-control rules, Edge Functions, storage integrations, and API implementation for app and admin workflows.</li>
+<li>Worked across the CareerQuest stack, including TypeScript/Fastify middleware, MQTT tag ingestion, SQLite persistence, React/Vite dashboard and checkout apps, QR scanning, PDF report generation, Docker Compose, Caddy, and GitHub Actions deployment workflows.</li>
+<li>Built and maintained GraphQL-integrated iOS features for the Worldwide Auctioneers app, connecting mobile workflows to backend API data.</li>
+</ul>
+<h3>Bigcat Software Solutions, Inc. — iOS Developer</h3>
+<p><strong>November 2022 – November 2023</strong></p>
+<ul>
+<li>Rebuilt and maintained the Mansion88 native iOS application with focus on cleaner architecture, maintainability, and future feature flexibility.</li>
+<li>Collaborated with product and engineering stakeholders to modernize iOS implementation patterns.</li>
+</ul>
+<h3>Leapfroggr Inc / SeriousMD — iOS Developer</h3>
+<p><strong>July 2021 – November 2022</strong></p>
+<ul>
+<li>Built and maintained native iOS features for iPhone and iPad applications.</li>
+<li>Translated company requirements into functional, interactive, production-ready mobile workflows and user interfaces.</li>
+</ul>
+<h3>Freelance — Mobile Developer / Android / Flutter</h3>
+<p><strong>January 2020 – July 2021</strong></p>
+<ul>
+<li>Delivered cross-platform client applications with Flutter and Dart for iOS and Android.</li>
+</ul>
+<h3>Earlier Experience — Android / ML / Python</h3>
+<p><strong>2017 – 2020</strong></p>
+<ul>
+<li>Built Android applications, Kotlin/LibGDX features, TensorFlow research prototypes, and Odoo ERP customizations across early engineering roles.</li>
+</ul></section>
+  <section id="selected-projects"><h2>Projects</h2><h3>Career Match by JKEC — SwiftUI / Jetpack Compose / App Store / Google Play</h3>
 <p>Production iOS and Android application developed at Astra Applications.<br>App Store: <a href="https://apps.apple.com/ph/app/career-match-by-jkec/id6479643541" target="_blank" rel="noreferrer">Career Match by JKEC</a> · Google Play: <a href="https://play.google.com/store/apps/details?id=com.astraapplications.jkec.careermatch" target="_blank" rel="noreferrer">Career Match by JKEC</a></p>
 <h3>Worldwide Auctioneers iOS App — iOS / GraphQL</h3>
-<p>Production iOS application work involving GraphQL API integration and release-oriented mobile feature delivery.</p>
-  </section>
+<p>Production iOS application work involving GraphQL API integration and release-oriented mobile feature delivery.</p></section>
 </main>
 <script>
   const root = document.documentElement;
